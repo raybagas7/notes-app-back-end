@@ -1,4 +1,3 @@
-const { response } = require('@hapi/hapi/lib/validation');
 const { nanoid } = require('nanoid');
 const notes = require('./notes');
 
@@ -10,7 +9,12 @@ const addNoteHandler = (request, h) => {
   const updatedAt = createdAt;
 
   const newNote = {
-    title, tags, body, id, createdAt, updatedAt,
+    title,
+    tags,
+    body,
+    id,
+    createdAt,
+    updatedAt,
   };
 
   notes.push(newNote);
@@ -89,6 +93,10 @@ const editNoteByIdHandler = (request, h) => {
     return response;
   }
 
+  const response = h.response({
+    status: 'fail',
+    message: 'Catatan gagal diperbarui',
+  });
   response.code(404);
   return response;
 };
