@@ -1,4 +1,3 @@
-/* eslint-disable */
 const { nanoid } = require('nanoid');
 const { Pool } = require('pg');
 const { mapDBToModel } = require('../../utils');
