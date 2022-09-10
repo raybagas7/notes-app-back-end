@@ -1,7 +1,3 @@
-/* eslint-disable */
-
-// exports.shorthands = undefined;
-
 exports.up = (pgm) => {
   pgm.createTable('notes', {
     id: {
